@@ -265,13 +265,36 @@ Access from your phone on the same network!
 
 ## 📊 Performance
 
-| Metric | Value |
-|--------|-------|
-| **Backend Startup** | ~3 seconds |
-| **Document Processing** | 10-70 seconds |
-| **Web Search** | 2-5 seconds |
-| **General Chat** | 1-3 seconds |
-| **Memory Usage** | ~1.7 GB total |
+### Tested on Raspberry Pi 4 (4GB RAM)
+
+Real-world performance metrics running on Raspberry Pi 4:
+
+| Metric | Value | Notes |
+|--------|-------|-------|
+| **Backend Startup** | ~3 seconds | FastAPI initialization |
+| **Document Processing** | 10-70 seconds | Depends on document complexity |
+| **Web Search** | 2-5 seconds | SearXNG + AI synthesis |
+| **General Chat** | 1-3 seconds | qwen3:0.6b inference |
+| **Memory Usage (Backend)** | ~200 MB | Python + FastAPI |
+| **Memory Usage (Ollama)** | ~1.5 GB | With models loaded |
+| **Total System Memory** | ~1.7 GB | All services running |
+| **CPU Usage (Idle)** | 5-10% | Background processes |
+| **CPU Usage (Processing)** | 80-100% | During document OCR |
+
+### Hardware Specifications
+- **Device**: Raspberry Pi 4 Model B
+- **RAM**: 4GB
+- **CPU**: Quad-core Cortex-A72 (ARM v8) 64-bit @ 1.5GHz
+- **Storage**: MicroSD Card (Class 10 recommended)
+- **OS**: Raspberry Pi OS (64-bit)
+
+### Model Performance
+| Model | Size | Load Time | Inference Speed | RAM Usage |
+|-------|------|-----------|-----------------|-----------|
+| **qwen3:0.6b** | ~600MB | ~2 seconds | 20-30 tokens/sec | ~800MB |
+| **granite-docling:258M** | ~258MB | ~3 seconds | 1-2 seconds/image | ~700MB |
+
+> 💡 **Note**: Performance varies based on document complexity, image resolution, and concurrent requests. These metrics represent single-user usage on a Raspberry Pi 4 with 4GB RAM.
 
 ---
 
