@@ -339,11 +339,24 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Qwen Team** - For the qwen3 model
-- **IBM/Docling Project** - For Granite-Docling model
-- **Ollama** - For local LLM inference
-- **SearXNG** - For privacy-focused search
-- **FastAPI** - For the excellent web framework
+This project is built on the shoulders of giants. Special thanks to:
+
+### AI Models (via Ollama)
+- **[Qwen Team](https://huggingface.co/Qwen)** - For the incredible [qwen3:0.6b model](https://ollama.com/library/qwen3:0.6b) with 752M parameters, excellent reasoning capabilities, and multilingual support (100+ languages)
+- **[IBM Research / Docling Project](https://huggingface.co/ibm-granite/granite-docling-258M)** - For the [Granite-Docling 258M model](https://ollama.com/gabegoodhart/granite-docling) with enhanced document understanding, DocTags generation, and equation recognition
+- **[Gabe Goodhart](https://ollama.com/gabegoodhart)** - For packaging and sharing the Granite-Docling model on Ollama
+
+### Infrastructure & Frameworks
+- **[Ollama](https://ollama.com/)** - For making local LLM inference accessible and easy to deploy
+- **[SearXNG](https://github.com/searxng/searxng)** - For the privacy-respecting metasearch engine
+- **[FastAPI](https://fastapi.tiangolo.com/)** - For the modern, high-performance web framework
+- **[Docling Core](https://github.com/DS4SD/docling-core)** - For DocTags parsing and document structure understanding
+
+### Model Details
+- **qwen3:0.6b**: 752M parameters, Q4_K_M quantization, 523MB - [Ollama](https://ollama.com/library/qwen3:0.6b) | [Hugging Face](https://huggingface.co/Qwen)
+- **granite-docling:258M**: 164M parameters, F16 quantization, 522MB - [Ollama](https://ollama.com/gabegoodhart/granite-docling) | [Hugging Face](https://huggingface.co/ibm-granite/granite-docling-258M)
+
+All models are accessed via [Ollama](https://ollama.com/), which provides a unified API for local LLM inference.
 
 ---
 
