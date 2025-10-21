@@ -265,36 +265,35 @@ Access from your phone on the same network!
 
 ## 📊 Performance
 
-### Tested on Raspberry Pi 4 (4GB RAM)
+### Tested on Raspberry Pi 5 (16GB RAM)
 
-Real-world performance metrics running on Raspberry Pi 4:
+Real-world performance metrics running on Raspberry Pi 5:
 
 | Metric | Value | Notes |
 |--------|-------|-------|
 | **Backend Startup** | ~3 seconds | FastAPI initialization |
-| **Document Processing** | 10-70 seconds | Depends on document complexity |
+| **Document Processing** | 10-70 seconds | Depends on complexity and image size |
 | **Web Search** | 2-5 seconds | SearXNG + AI synthesis |
-| **General Chat** | 1-3 seconds | qwen3:0.6b inference |
+| **General Chat** | 1-3 seconds | qwen3:0.6b response generation |
 | **Memory Usage (Backend)** | ~200 MB | Python + FastAPI |
-| **Memory Usage (Ollama)** | ~1.5 GB | With models loaded |
-| **Total System Memory** | ~1.7 GB | All services running |
-| **CPU Usage (Idle)** | 5-10% | Background processes |
-| **CPU Usage (Processing)** | 80-100% | During document OCR |
+| **Memory Usage (Ollama)** | ~2.5 GB | With models loaded and inference |
+| **Total System Used** | ~2.5 GB | All services running |
+| **Total System Available** | 16 GB | Plenty of headroom |
 
 ### Hardware Specifications
-- **Device**: Raspberry Pi 4 Model B
-- **RAM**: 4GB
-- **CPU**: Quad-core Cortex-A72 (ARM v8) 64-bit @ 1.5GHz
-- **Storage**: MicroSD Card (Class 10 recommended)
+- **Device**: Raspberry Pi 5 Model B Rev 1.1
+- **RAM**: 16GB LPDDR4X
+- **CPU**: Quad-core Cortex-A76 @ 2.4GHz (ARM v8.2)
+- **Storage**: MicroSD / NVMe SSD support
 - **OS**: Raspberry Pi OS (64-bit)
 
-### Model Performance
-| Model | Size | Load Time | Inference Speed | RAM Usage |
-|-------|------|-----------|-----------------|-----------|
-| **qwen3:0.6b** | ~600MB | ~2 seconds | 20-30 tokens/sec | ~800MB |
-| **granite-docling:258M** | ~258MB | ~3 seconds | 1-2 seconds/image | ~700MB |
+### Model Specifications
+| Model | Size on Disk | Parameters | Quantization | Purpose |
+|-------|--------------|------------|--------------|---------|
+| **qwen3:0.6b** | ~522 MB | 751.63M | Q4_K_M | Router & chat |
+| **granite-docling:258M** | ~522 MB | 164.01M | F16 | Document OCR |
 
-> 💡 **Note**: Performance varies based on document complexity, image resolution, and concurrent requests. These metrics represent single-user usage on a Raspberry Pi 4 with 4GB RAM.
+> 💡 **Note**: The Raspberry Pi 5 with 16GB RAM provides excellent performance for this multi-agent system. Document processing time varies based on image resolution and content complexity. The system can handle multiple concurrent requests thanks to the generous RAM allocation.
 
 ---
 
